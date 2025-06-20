@@ -1,29 +1,61 @@
-# crm-frontend
+# Vue Client Manager App
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a responsive web application built using [Vue.js 3](https://vuejs.org/), [Element Plus](https://element-plus.org/), and [Bootstrap 5](https://getbootstrap.com/). The app allows users to manage clients, including adding, editing, and deleting client records.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Built with Vue 3 Composition API
+- CRUD operations for managing clients
+- Responsive layout with Bootstrap 5
+- Element Plus UI components (modals, inputs, notifications)
+- Axios for API communication
+- Real-time client stats (active, inactive, total)
+- Live search and data filtering
 
-## Customize configuration
+## 🛠️ Tech Stack
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Framework:** Vue 3
+- **Language:** JavaScript
+- **Routing:** Vue Router
+- **State Management:** Pinia or Vue's reactivity API
+- **HTTP Client:** Axios
+- **Styling:** Bootstrap 5 + Element Plus
 
-## Project Setup
+## 🧾 Environment Requirements
 
-```sh
+Before running the project, make sure you have the correct versions of Node.js and npm installed.
+
+Recommended: Node.js v18+, npm v9+
+
+### ✅ Installation
+
+# Clone the repo
+
+git clone https://github.com/yourusername/vue-client-manager.git
+
+# Move into the project directory
+
+cd vue-client-manager
+
+# Install dependencies
+
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
+
 ```
 
-### Compile and Minify for Production
+### 📁 Project Structure
 
-```sh
-npm run build
+```bash
+src/
+├── api/            → API integrations
+├── assets/         → Static files (images, fonts, etc.)
+├── components/     → Vue components
+├── router/         → Vue Router setup
+├── store/          → Pinia stores (state management)
+├── utils/          → Reusable utilities
+├── views/          → Page-level views
+└── main.js         → App entry point
+
 ```
