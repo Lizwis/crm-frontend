@@ -3,6 +3,8 @@ import { useAuthStore } from '@/stores/auth' // Adjust path if needed
 import Login from '../views/auth/login.vue'
 import Dashboard from '../views/dashboard.vue'
 
+import client from '../views/client/index.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -16,6 +18,12 @@ const router = createRouter({
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: '/client/index',
+      name: 'client',
+      component: client,
       meta: { requiresAuth: true },
     },
   ],

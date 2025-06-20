@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'element-plus/dist/index.css'
 // /import '@element-plus/theme-chalk/dist/index.css'
 
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 const pinia = createPinia()
 
 pinia.use(piniaPluginPersistedstate)

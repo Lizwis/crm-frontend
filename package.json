@@ -13,6 +13,7 @@
     "@popperjs/core": "^2.11.8",
     "axios": "^1.10.0",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.13.1",
     "element-plus": "^2.10.2",
     "pinia": "^3.0.1",
     "pinia-plugin-persistedstate": "^4.3.0",

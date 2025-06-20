@@ -1,24 +1,41 @@
 <template>
-  <div class="d-flex" id="wrapper">
-    <nav id="sidebar" class="bg-light border-end">
-      <div class="sidebar-heading px-3 py-4 fw-bold text-primary">MyApp</div>
-      <div class="list-group list-group-flush">
-        <router-link class="list-group-item list-group-item-action" to="/dashboard"
-          >Dashboard</router-link
-        >
-        <router-link class="list-group-item list-group-item-action" to="/profile"
-          >Profile</router-link
-        >
-      </div>
+  <div class="d-flex flex-column flex-lg-row min-vh-100">
+    <!-- Sidebar -->
+    <nav
+      id="sidebar"
+      class="bg-dark text-white p-3 flex-shrink-0"
+      :class="{ 'd-none': isSidebarCollapsed, 'd-lg-block': true }"
+      style="min-width: 250px"
+    >
+      <h4 class="text-white fw-bold mb-4">CRM App</h4>
+
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <router-link class="nav-link text-white" active-class="active" to="/dashboard">
+            <i class="bi bi-speedometer2 me-2"></i> Dashboard
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link text-white" active-class="active" to="/client/index">
+            <i class="bi bi-person-circle me-2"></i> Clients
+          </router-link>
+        </li>
+      </ul>
+
+      <div class="mt-auto small text-white-50 pt-5">&copy; 2025 MyApp</div>
     </nav>
 
-    <div id="page-content-wrapper" class="w-100">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <!-- Main content -->
+    <div class="flex-grow-1 bg-light">
+      <!-- Top Navbar -->
+      <nav class="navbar navbar-light bg-white border-bottom shadow-sm px-3 px-lg-4">
         <div class="container-fluid">
-          <button class="btn btn-outline-primary" @click="toggleSidebar">☰</button>
+          <button class="btn btn-outline-primary d-lg-none" @click="toggleSidebar">
+            <i class="bi bi-list"></i>
+          </button>
 
           <div class="ms-auto d-flex align-items-center">
-            <span class="me-3">Hi, {{ authStore.user?.name }}</span>
+            <span class="me-3 text-muted">Hi, {{ authStore.user?.name }}</span>
             <button class="btn btn-outline-danger btn-sm" @click="authStore.logout()">
               Logout
             </button>
@@ -26,7 +43,8 @@
         </div>
       </nav>
 
-      <div class="container-fluid p-4">
+      <!-- Page Content -->
+      <div class="container-fluid py-4 px-3 px-lg-4">
         <slot />
       </div>
     </div>
@@ -38,22 +56,21 @@ import { ref } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 
 const authStore = useAuthStore()
-const toggleSidebar = () => {
-  document.getElementById('sidebar').classList.toggle('d-none')
+const isSidebarCollapsed = ref(false)
+
+function toggleSidebar() {
+  isSidebarCollapsed.value = !isSidebarCollapsed.value
 }
 </script>
 
 <style scoped>
-#wrapper {
-  min-height: 100vh;
+#sidebar .nav-link.active,
+#sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 0.375rem;
 }
 
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
-}
-
-#page-content-wrapper {
-  flex: 1;
+#sidebar i {
+  width: 20px;
 }
 </style>

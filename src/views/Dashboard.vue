@@ -5,11 +5,18 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import { useAuthStore } from '@/stores/auth'
-const authStore = useAuthStore()
 
-defineOptions({
+export default {
   layout: 'auth',
-})
+
+  setup() {
+    const authStore = useAuthStore()
+
+    return {
+      authStore,
+    }
+  },
+}
 </script>
