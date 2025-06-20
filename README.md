@@ -29,16 +29,6 @@ Recommended: Node.js v18+, npm v9+
 
 ### ✅ Installation
 
-# Clone the repo
-
-git clone https://github.com/yourusername/vue-client-manager.git
-
-# Move into the project directory
-
-cd vue-client-manager
-
-# Install dependencies
-
 ```bash
 npm install
 npm run dev
